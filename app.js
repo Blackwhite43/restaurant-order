@@ -15,6 +15,8 @@ const AppError = require('./utils/appError');
 
 // -------- REQUIRE ROUTES MODULES -------- //
 const menuRoutes = require('./routes/menuRoutes'); // IMPORT YOUR ROUTES HERE
+const customerRoutes = require('./routes/customerRoutes');
+const cartRoutes = require('./routes/cartRoutes');
 
 // ----------------- DEFINE EXPRESS AS APP ----------------------- //
 const app = express();
@@ -80,6 +82,8 @@ app.use((req, res, next) => {
 // -------------- ROUTES -------------------- //
 // API Routes is divide it to routes folder
 app.use('/menu-api', menuRoutes); // YOU CAN SWAP '/sample-api' WITH ANY API NAME YOU WANT 
+app.use('/customer-api', customerRoutes);
+app.use('/cart-api', cartRoutes);
 
 // HANDLE UNHANDLE ROUTE makesure this route on bot of others route
 app.all('*', (req, res, next) => {

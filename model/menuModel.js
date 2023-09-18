@@ -3,6 +3,9 @@ const menuSchema = new mongoose.Schema({
     menu_name: {
         type: String
     },
+    category: {
+        type: String
+    },
     price: {
         type: Number
     },
